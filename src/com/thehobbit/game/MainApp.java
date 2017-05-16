@@ -25,18 +25,18 @@ public class MainApp extends Application implements Initializable {
         launch(args);
     }
 
-    @FXML
-    private Pane path_1;
-    private Circle player;
+        @FXML
+        private Pane path_1;
+        private Circle player;
 
-    @Override
-    public void initialize(URL fxmlFileLocation, ResourceBundle resources) {
-        assert path_1 != null;
+        @Override
+        public void initialize(URL fxmlFileLocation, ResourceBundle resources) {
+            assert path_1 != null;
 
-        player = new Circle(10, Color.ALICEBLUE);
+            player = new Circle(10, Color.ALICEBLUE);
 
-        player.setLayoutX(path_1.getChildren().get(0).getLayoutX() + player.getRadius());
-        player.setLayoutY(path_1.getChildren().get(0).getLayoutY() + player.getRadius());
+            player.setLayoutX(path_1.getChildren().get(0).getLayoutX() + player.getRadius());
+            player.setLayoutY(path_1.getChildren().get(0).getLayoutY() + player.getRadius());
 
         path_1.getChildren().add(player);
 
