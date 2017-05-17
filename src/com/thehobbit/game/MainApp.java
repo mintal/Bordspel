@@ -2,62 +2,31 @@ package com.thehobbit.game;/**
  * Created by mintal on 10/05/2017.
  */
 
+import com.thehobbit.game.view.titlescreen.TitleScreen;
 import javafx.application.Application;
-import javafx.event.EventHandler;
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Scene;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.Pane;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
-import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
-import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
-
-public class MainApp extends Application implements Initializable {
+public class MainApp extends Application {
 
     public static void main(String[] args) {
         launch(args);
     }
 
-        @FXML
-        private Pane path_1;
-        private Circle player;
-
-        @Override
-        public void initialize(URL fxmlFileLocation, ResourceBundle resources) {
-            assert path_1 != null;
-
-            player = new Circle(10, Color.ALICEBLUE);
-
-            player.setLayoutX(path_1.getChildren().get(0).getLayoutX() + player.getRadius());
-            player.setLayoutY(path_1.getChildren().get(0).getLayoutY() + player.getRadius());
-
-        path_1.getChildren().add(player);
-
-        for (int i = 0; i < path_1.getChildren().size(); i++) {
-            int finalI = i;
-            path_1.getChildren().get(i).setOnMouseClicked(event -> {
-                player.setLayoutX(path_1.getChildren().get(finalI).getLayoutX() + player.getRadius());
-                player.setLayoutY(path_1.getChildren().get(finalI).getLayoutY() + player.getRadius());
-            });
-        }
-    }
 
     @Override
-    public void start(Stage primaryStage) throws IOException {
+    public void start(Stage primaryStage) throws Exception {
+        TitleScreen titleScreen = new TitleScreen();
+        Scene scene = new Scene(titleScreen);
 
-        Pane root = FXMLLoader.load(getClass().getResource("main.fxml"));
+        primaryStage.setMinWidth(1280);
+        primaryStage.setMinHeight(720);
 
-        Scene scene = new Scene(root);
-        primaryStage.setTitle("FXML TEST");
+        primaryStage.setMaxWidth(1920);
+        primaryStage.setMaxHeight(1080);
+        System.err.println("Loading scene.");
         primaryStage.setScene(scene);
+        System.err.println("Finished Loading scene, showing screen.");
         primaryStage.show();
-
     }
 }

@@ -41,7 +41,7 @@
          <center>
             <ImageView fx:id="imageView" fitHeight="735.0" fitWidth="1007.0" layoutX="61.0" layoutY="83.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                   <Image url="@./resources/images/static/background.jpg" />
+                   <Image url="@../images/static/background.jpg" />
                </image>
             </ImageView>
          </center>
