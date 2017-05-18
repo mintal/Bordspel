@@ -34,8 +34,7 @@ public class TitleScreenMenu extends VBox {
         });
 
         TitleScreenMenuItem exitGame = new TitleScreenMenuItem("Exit", event -> {
-            System.err.println("Shutting down system.");
-            System.exit(0);
+            this.getChildren().add(new ConfirmationDialogue("Exit","are you sure you want to exit?", event1 -> System.exit(0)));
         });
 
         this.getChildren().addAll(hostGame,joinGame,settings,exitGame);
