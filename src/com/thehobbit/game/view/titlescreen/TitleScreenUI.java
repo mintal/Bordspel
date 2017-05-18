@@ -1,5 +1,6 @@
 package com.thehobbit.game.view.titlescreen;
 
+import com.thehobbit.game.view.titlescreen.menu.TitleScreenSettings;
 import javafx.scene.layout.BorderPane;
 
 /**
@@ -7,8 +8,8 @@ import javafx.scene.layout.BorderPane;
  */
 public class TitleScreenUI extends BorderPane {
 
-    public TitleScreenUI(){
-        this.setRight(new TitleScreenMenu());
+    public TitleScreenUI() {
+        this.setRight(new TitleScreenSettings());
     }
 
 }

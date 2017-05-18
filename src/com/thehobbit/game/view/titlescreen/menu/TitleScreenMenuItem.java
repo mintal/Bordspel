@@ -1,5 +1,6 @@
-package com.thehobbit.game.view.titlescreen;
+package com.thehobbit.game.view.titlescreen.menu;
 
+import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -14,14 +15,21 @@ import javafx.scene.text.Font;
  */
 public class TitleScreenMenuItem extends StackPane {
 
+    private String name;
+    private EventHandler onMouseClicked;
+    private double size = 72.0;
+
     public TitleScreenMenuItem(String name, EventHandler onMouseClicked){
-        Label label = new Label(name);
+        this.name = name;
+        this.onMouseClicked = onMouseClicked;
+
+        Label label = new Label(this.name);
         label.setAlignment(Pos.CENTER);
         label.setContentDisplay(ContentDisplay.CENTER);
         label.setTextFill(Color.WHITE);
-        label.setFont(Font.font("Ringbearer Medium",72.0)); //to-do: add correct family font
+        label.setFont(Font.font("Ringbearer Medium",this.size)); //to-do: add correct family font
 
-        this.setOnMouseClicked(onMouseClicked);
+        this.setOnMouseClicked(this.onMouseClicked);
         this.getChildren().add(label);
 
         this.setPadding(new Insets(10,10,10,10));
@@ -30,13 +38,17 @@ public class TitleScreenMenuItem extends StackPane {
     }
 
     public TitleScreenMenuItem(String name, EventHandler onMouseClicked, int size){
-        Label label = new Label(name);
+        this.name = name;
+        this.onMouseClicked = onMouseClicked;
+        this.size = size;
+
+        Label label = new Label(this.name);
         label.setAlignment(Pos.CENTER);
         label.setContentDisplay(ContentDisplay.CENTER);
         label.setTextFill(Color.WHITE);
-        label.setFont(Font.font("Ringbearer Medium",size)); //to-do: add correct family font
+        label.setFont(Font.font("Ringbearer Medium",this.size)); //to-do: add correct family font
 
-        this.setOnMouseClicked(onMouseClicked);
+        this.setOnMouseClicked(this.onMouseClicked);
         this.getChildren().add(label);
 
         this.setPadding(new Insets(10,10,10,10));
@@ -44,4 +56,15 @@ public class TitleScreenMenuItem extends StackPane {
         this.setAlignment(Pos.CENTER);
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setOnClicked(EventHandler onMouseClicked) {
+        this.onMouseClicked = onMouseClicked;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
+    }
 }

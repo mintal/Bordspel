@@ -11,9 +11,9 @@ import java.net.URL;
 /**
  * Created by mintal on 17/05/2017.
  */
-public class TitleScreenMediaPlayer extends Pane {
+public class ViewMediaPlayer extends Pane {
 
-    public TitleScreenMediaPlayer(String source){
+    public ViewMediaPlayer(String source){
 
         URL src = MainApp.class.getResource(source);
         Media media = new Media(src.toString());
