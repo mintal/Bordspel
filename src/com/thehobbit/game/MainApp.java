@@ -1,33 +1,40 @@
-package com.thehobbit.game;/**
- * Created by mintal on 10/05/2017.
- */
+package com.thehobbit.game;
 
-import com.thehobbit.game.view.FPSCounter;
-import com.thehobbit.game.view.titlescreen.TitleScreen;
+import com.thehobbit.game.controller.MenuItemController;
 import javafx.application.Application;
-import javafx.geometry.Pos;
-import javafx.scene.Scene;
+import javafx.scene.layout.StackPane;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import com.thehobbit.game.model.Configuration;
+import com.thehobbit.game.util.UtilLogger;
+import com.thehobbit.game.view.titlescreen.TitleScreenScene;
 
+import java.util.logging.Level;
+
+/**
+ * Created by mintal on 22/05/2017.
+ */
 public class MainApp extends Application {
-
-    public static void main(String[] args) {
-        launch(args);
-    }
-
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        TitleScreen titleScreen = new TitleScreen();
-        Scene scene = new Scene(titleScreen);
-        FPSCounter fpsCounter = new FPSCounter();
-        titleScreen.getChildren().add(fpsCounter);
-        titleScreen.setAlignment(fpsCounter,Pos.TOP_LEFT);
-        primaryStage.setResizable(false);
-        System.err.println("Loading scene.");
+
+        UtilLogger.log.setLevel(Level.INFO); //set to Level.INFO for debugging, otherwise Level.SEVERE
+
+        Font.loadFont(Configuration.fontLocation.toExternalForm(),32.0);
+        UtilLogger.log.info("Loaded custom font");
+
+        StackPane root = new StackPane();
+        root.setPrefSize(1280,720);
+
+        MenuItemController controller = new MenuItemController();
+        controller.loadStage(primaryStage);
+        UtilLogger.log.info("loaded stage");
+
+        TitleScreenScene scene = new TitleScreenScene(root,controller);
         primaryStage.setScene(scene);
-        primaryStage.sizeToScene();
-        System.err.println("Finished Loading scene, showing screen.");
+
+        primaryStage.setResizable(false);
         primaryStage.show();
     }
 }

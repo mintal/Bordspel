@@ -1,6 +1,6 @@
-package com.thehobbit.game.view.titlescreen;
+package com.thehobbit.game.view.titlescreen.media;
 
-import com.thehobbit.game.MainApp;
+import com.thehobbit.game.view.titlescreen.TitleScreenScene;
 import javafx.scene.layout.Pane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
@@ -9,14 +9,13 @@ import javafx.scene.media.MediaView;
 import java.net.URL;
 
 /**
- * Created by mintal on 17/05/2017.
+ * Created by mintal on 22/05/2017.
  */
-public class ViewMediaPlayer extends Pane {
+public class PlayMedia extends Pane {
 
-    public ViewMediaPlayer(String source){
 
-        URL src = MainApp.class.getResource(source);
-        Media media = new Media(src.toString());
+    public PlayMedia(URL url) {
+        Media media = new Media(url.toString());
 
         MediaPlayer mediaPlayer = new MediaPlayer(media);
         mediaPlayer.setAutoPlay(true);
@@ -24,7 +23,6 @@ public class ViewMediaPlayer extends Pane {
 
         MediaView mediaView = new MediaView(mediaPlayer);
         mediaView.fitWidthProperty().bind(this.widthProperty());
-
         this.getChildren().add(mediaView);
     }
 
