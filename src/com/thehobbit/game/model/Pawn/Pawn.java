@@ -1,6 +1,7 @@
 package com.thehobbit.game.model.Pawn;
 
 /**
+ * Created by tobie on 24/05/2017.
  */
 public class Pawn {
     int position;
