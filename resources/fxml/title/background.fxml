@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.media.MediaPlayer?>
+
+<?import javafx.scene.media.Media?>
+<?import javafx.scene.layout.Pane?>
+<Pane fx:id="backgroundPane" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <MediaView fitWidth="${backgroundPane.width}">
+          <mediaPlayer>
+              <MediaPlayer autoPlay="true" cycleCount="-1">
+                  <media>
+                      <Media source="@/videos/title_screen.mp4" />
+                  </media>
+              </MediaPlayer>
+          </mediaPlayer>
+      </MediaView>
+   </children>
+</Pane>
