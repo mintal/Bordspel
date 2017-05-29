@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.StackPane?>
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           maxHeight="1080.0" maxWidth="1920.0" minHeight="720.0" minWidth="1280.0" prefHeight="720.0"
+           prefWidth="1280.0" fx:controller="controller.MainController">
+
+    <fx:include source="title/background.fxml"/>
+    <fx:include source="title/userinterface.fxml"/>
+
+</StackPane>

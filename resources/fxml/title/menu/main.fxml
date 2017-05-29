@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<?import javafx.scene.layout.Pane?>
+<Pane fx:id="menuPane" xmlns:fx="http://javafx.com/fxml" fx:controller="controller.title.MenuController" style="-fx-background-color:rgba(0,0,0,0.3);">
+    <fx:include source="logo.fxml" prefWidth="${menuPane.width}"/>
+<VBox alignment="CENTER" prefHeight="${menuPane.height}" prefWidth="511.0">
+   <children>
+       <Label alignment="CENTER" contentDisplay="CENTER" text="" textAlignment="CENTER" textFill="WHITE">
+           <font>
+               <Font name="Ringbearer Medium" size="72.0" />
+           </font>
+           <padding>
+               <Insets bottom="50.0" />
+           </padding>
+       </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" text="host game" textAlignment="CENTER" textFill="WHITE" fx:id="hostGame" onMouseClicked="#handleClickOnHostGame">
+         <font>
+            <Font name="Ringbearer Medium" size="60.0" />
+         </font>
+         <padding>
+            <Insets bottom="25.0" />
+         </padding>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" text="join game" textAlignment="CENTER" textFill="WHITE" fx:id="joinGame" onMouseClicked="#handleClickOnJoinGame">
+         <font>
+            <Font name="Ringbearer Medium" size="60.0" />
+         </font>
+         <padding>
+            <Insets bottom="25.0" />
+         </padding>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" text="settings" textAlignment="CENTER" textFill="WHITE" fx:id="settings" onMouseClicked="#handleClickOnSettings">
+         <font>
+            <Font name="Ringbearer Medium" size="60.0" />
+         </font>
+         <padding>
+            <Insets bottom="25.0" />
+         </padding>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" text="exit" textAlignment="CENTER" textFill="WHITE" fx:id="exit" onMouseClicked="#handleClickOnExit">
+         <font>
+            <Font name="Ringbearer Medium" size="60.0" />
+         </font>
+         <padding>
+            <Insets bottom="25.0" />
+         </padding>
+      </Label>
+   </children>
+</VBox>
+</Pane>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="595" maxWidth="960" style="-fx-background-color:rgba(0,0,0,0.3);" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.title.HostController">
+    <children>
+        <VBox>
+            <children>
+                <HBox alignment="CENTER">
+                    <children>
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefWidth="233" style="-fx-background-image: url(/images/ui/button.png); -fx-background-size: contain; -fx-background-color:transparent; -fx-background-position: center center; -fx-background-repeat: no-repeat;" text="easy">
+                            <font>
+                                <Font name="Ringbearer Medium" size="38.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets />
+                            </VBox.margin>
+                            <padding>
+                                <Insets bottom="18.0" />
+                            </padding>
+                        </Button>
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefWidth="233" style="-fx-background-image: url(/images/ui/button.png); -fx-background-size: contain; -fx-background-color:transparent; -fx-background-position: center center; -fx-background-repeat: no-repeat;" text="regular">
+                            <font>
+                                <Font name="Ringbearer Medium" size="38.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets />
+                            </VBox.margin>
+                            <padding>
+                                <Insets bottom="18.0" />
+                            </padding>
+                        </Button>
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefWidth="233" style="-fx-background-image: url(/images/ui/button.png); -fx-background-size: contain; -fx-background-color:transparent; -fx-background-position: center center; -fx-background-repeat: no-repeat;" text="hard">
+                            <font>
+                                <Font name="Ringbearer Medium" size="38.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets />
+                            </VBox.margin>
+                            <padding>
+                                <Insets bottom="18.0" />
+                            </padding>
+                        </Button>
+                    </children>
+                </HBox>
+            <Label text="beschrijving moeilijkheid" textFill="WHITE">
+               <font>
+                  <Font name="Ringbearer Medium" size="28.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="difficultyDescription" editable="false" focusTraversable="false" prefHeight="500.0" prefWidth="200.0" style="-fx-background-color: rgba(255,255,255,0.2);" stylesheets="/css/transparent-text-area.css" text="" wrapText="true">
+               <font>
+                  <Font size="22.0" />
+               </font></TextArea>
+                <StackPane>
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefWidth="150.0" style="-fx-background-image: url(/images/ui/button.png); -fx-background-size: contain; -fx-background-color:transparent; -fx-background-position: center center; -fx-background-repeat: no-repeat;" text="start" textAlignment="CENTER">
+               <font>
+                  <Font name="Ringbearer Medium" size="30.0" />
+               </font>
+               <padding>
+                  <Insets bottom="17.0" />
+               </padding>
+            </Button></StackPane>
+            </children>
+            <padding>
+                <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+            </padding>
+        </VBox>
+    </children>
+</StackPane>
